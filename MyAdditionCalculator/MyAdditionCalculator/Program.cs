@@ -2,19 +2,19 @@
 // Prints what is inside the brackets
 Console.WriteLine("Enter A Number!");
 
-int myFirstNumber = 0;
-int mySecondNumber = 0;
-int sumOfUserInput = 0;
+double myFirstNumber = 0;
+double mySecondNumber = 0.0;
+double sumOfUserInput = 0.0;
 
 // takes the user input and stores it
 string userInput = Console.ReadLine();
 //myNumber = int.Parse(Console.ReadLine());
-myFirstNumber = int.Parse(userInput);
+myFirstNumber = double.Parse(userInput);
 
 Console.WriteLine("Enter a second number");
 
 userInput = Console.ReadLine();
-mySecondNumber = int.Parse(userInput);
+mySecondNumber = double.Parse(userInput);
 
 sumOfUserInput = myFirstNumber + mySecondNumber;
 

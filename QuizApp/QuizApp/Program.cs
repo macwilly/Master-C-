@@ -51,6 +51,18 @@ else
     Console.WriteLine($"Incorrect. The correct answer is {answer3}");
 }
 
-Console.WriteLine($"Your final score was {score}");
+Console.WriteLine($"Your final score was {score}/3");
 
+if (score == 3)
+{
+    Console.WriteLine("Excellent! You got all questions correct!");
+}
+else if (score > 0)
+{
+    Console.WriteLine("Good job, but keep learning");
+}
+else
+{
+    Console.WriteLine("Nothing correct, study harder and try again.");
+}
 Console.ReadKey();

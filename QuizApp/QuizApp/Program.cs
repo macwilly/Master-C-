@@ -12,7 +12,7 @@ int score = 0;
 Console.WriteLine(question1);
 string userAnswer1 = Console.ReadLine();
 
-if (userAnswer1.ToLower() == answer1.ToLower())
+if (userAnswer1.ToLower().Trim() == answer1.ToLower())
 {
     Console.WriteLine("Correct");
     score++;
@@ -26,7 +26,7 @@ else
 Console.WriteLine(question2);
 string userAnswer2 = Console.ReadLine();
 
-if (userAnswer2 == answer2)
+if (userAnswer2.Trim() == answer2)
 {
     Console.WriteLine("Correct");
     score++;
@@ -41,7 +41,7 @@ else
 Console.WriteLine(question3);
 string userAnswer3 = Console.ReadLine();
 
-if (userAnswer3.ToLower() == answer3.ToLower())
+if (userAnswer3.ToLower().Trim() == answer3.ToLower())
 {
     Console.WriteLine("Correct");
     score++;

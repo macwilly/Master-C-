@@ -1,7 +1,7 @@
 ﻿Random random = new Random();
 int numberOfGuesses = 0;
 int startNumber = 1;
-int endNumber = 100;
+int endNumber = 101;
 int hiddenNumber = random.Next(startNumber, endNumber);
 int userGuessedNumber = 0;
 

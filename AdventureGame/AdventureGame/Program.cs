@@ -1,6 +1,7 @@
 ﻿string characterName = "";
 string characterClass = "";
 int characterClassInt = 0;
+bool gameContinues = true;
 bool choseToEnterOrCamp = false;
 string classList = "\n 1) Warrior\n 2) Wizard\n 3) Archer";
 string forestOrCamp = "Do you enter the (f)orest or (c)amp out?";
@@ -47,30 +48,46 @@ while (characterClass == "")
 }
 
 Console.WriteLine($"Welcome {characterName} you will make a fine {characterClass}.\n You find yourself at the edge of the Dark Forest.\n {forestOrCamp}");
-
-string enterForestOrCamp = Console.ReadLine();
-
-while (!choseToEnterOrCamp)
+while (gameContinues)
 {
-    string localForestOrCamp = enterForestOrCamp.ToLower().Trim();
-    if (localForestOrCamp != "f" && localForestOrCamp != "forest" && localForestOrCamp != "c" && localForestOrCamp != "camp" && localForestOrCamp != "camp out")
+    string enterForestOrCamp = Console.ReadLine();
+
+    while (!choseToEnterOrCamp)
     {
-        Console.WriteLine($"Brave {characterName} the {characterClass} that is not a valid option.\n {forestOrCamp}");
-        enterForestOrCamp = Console.ReadLine();
+        string localForestOrCamp = enterForestOrCamp.ToLower().Trim();
+        if (localForestOrCamp != "f" && localForestOrCamp != "forest" && localForestOrCamp != "c" && localForestOrCamp != "camp" && localForestOrCamp != "camp out")
+        {
+            Console.WriteLine($"Brave {characterName} the {characterClass} that is not a valid option.\n {forestOrCamp}");
+            enterForestOrCamp = Console.ReadLine();
+        }
+        else
+        {
+            choseToEnterOrCamp = true;
+        }
+    }
+
+    if (enterForestOrCamp.ToLower().Trim() == "f" || enterForestOrCamp.ToLower().Trim() == "forest")
+    {
+        Console.WriteLine("You boldly enter The Dark Forest. Not fearing what lies ahead!");
     }
     else
     {
-        choseToEnterOrCamp = true;
+        Console.WriteLine("You decided to camp out and wait fot the light of day. While asleep a pack of wolves eats you.");
+        Console.WriteLine("GAME OVER");
+    }
+    Console.WriteLine("Play again? Yes/No");
+    if (Console.ReadLine().ToLower().Trim() == "Yes")
+    {
+        choseToEnterOrCamp = false;
+        Console.WriteLine($"Brave {characterName} the {characterClass}.\n {forestOrCamp}");
+        enterForestOrCamp = Console.ReadLine();
+    }
+    else { 
+        gameContinues = false;
     }
 }
 
-if (enterForestOrCamp.ToLower().Trim() == "f" || enterForestOrCamp.ToLower().Trim() == "forest")
-{
-    Console.WriteLine("You boldly enter The Dark Forest. Not fearing what lies ahead!");
-}
-else 
-{
-    Console.WriteLine("You decided to camp out and wait fot the light of day."); 
-}
+Console.WriteLine("Thanks for playing!");
+
 
 Console.ReadKey();

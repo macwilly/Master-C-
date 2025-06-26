@@ -5,51 +5,51 @@ bool gameContinues = true;
 bool choseToEnterOrCamp = false;
 string classList = "\n 1) Warrior\n 2) Wizard\n 3) Archer";
 string forestOrCamp = "Do you enter the (f)orest or (c)amp out?";
-Console.WriteLine("Welcome to the Adventure Game!");
-Console.WriteLine("Enter your charater's name: ");
-characterName = Console.ReadLine();
-Console.WriteLine($"Choose your Class:{classList}");
-var classInput = Console.ReadLine();
 
-while (characterClass == "")
+do
 {
-    if (int.TryParse(classInput, out characterClassInt))
+    Console.WriteLine("Welcome to the Adventure Game!");
+    Console.WriteLine("Enter your charater's name: ");
+    characterName = Console.ReadLine();
+    Console.WriteLine($"Choose your Class:{classList}");
+    var classInput = Console.ReadLine();
+    while (characterClass == "")
     {
-        switch (characterClassInt)
+        if (int.TryParse(classInput, out characterClassInt))
         {
-            case 1:
-                characterClass = "Warrior";
-                break;
-            case 2:
-                characterClass = "Wizard";
-                break;
-            case 3:
-                characterClass = "Archer";
-                break;
-            default:
-                Console.WriteLine($"Please Choose one of the avaiable classes:{classList}");
-                classInput = Console.ReadLine();
-                break;
-        }
-    }
-    else
-    {
-        string localClass = classInput.ToLower().Trim();
-        if (localClass != "warrior" && localClass != "wizard" && localClass != "archer")
-        {
-            Console.WriteLine($"Please choose one of the class:{classList}");
-            classInput = Console.ReadLine();
+            switch (characterClassInt)
+            {
+                case 1:
+                    characterClass = "Warrior";
+                    break;
+                case 2:
+                    characterClass = "Wizard";
+                    break;
+                case 3:
+                    characterClass = "Archer";
+                    break;
+                default:
+                    Console.WriteLine($"Please Choose one of the avaiable classes:{classList}");
+                    classInput = Console.ReadLine();
+                    break;
+            }
         }
         else
         {
-            characterClass = classInput;
+            string localClass = classInput.ToLower().Trim();
+            if (localClass != "warrior" && localClass != "wizard" && localClass != "archer")
+            {
+                Console.WriteLine($"Please choose one of the class:{classList}");
+                classInput = Console.ReadLine();
+            }
+            else
+            {
+                characterClass = classInput;
+            }
         }
     }
-}
 
-Console.WriteLine($"Welcome {characterName} you will make a fine {characterClass}.\n You find yourself at the edge of the Dark Forest.\n {forestOrCamp}");
-while (gameContinues)
-{
+    Console.WriteLine($"Welcome {characterName} you will make a fine {characterClass}.\n You find yourself at the edge of the Dark Forest.\n {forestOrCamp}");
     string enterForestOrCamp = Console.ReadLine();
 
     while (!choseToEnterOrCamp)
@@ -76,16 +76,26 @@ while (gameContinues)
         Console.WriteLine("GAME OVER");
     }
     Console.WriteLine("Play again? Yes/No");
-    if (Console.ReadLine().ToLower().Trim() == "Yes")
+
+    string playAgain = Console.ReadLine();
+    playAgain = playAgain.ToLower().Trim();
+
+    if (playAgain == "yes" || playAgain == "y")
     {
         choseToEnterOrCamp = false;
-        Console.WriteLine($"Brave {characterName} the {characterClass}.\n {forestOrCamp}");
-        enterForestOrCamp = Console.ReadLine();
+        characterName = "";
+        characterClass = "";
+        classInput = "";
+        gameContinues = true;
     }
-    else { 
+    else
+    {
         gameContinues = false;
     }
-}
+
+} while (gameContinues);
+
+
 
 Console.WriteLine("Thanks for playing!");
 

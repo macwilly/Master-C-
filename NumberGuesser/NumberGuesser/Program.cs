@@ -6,22 +6,20 @@ int hiddenNumber = random.Next(startNumber, endNumber);
 int userGuessedNumber = 0;
 
 Console.WriteLine($"Guess a number between {startNumber} and {endNumber}");
-numberOfGuesses++;
-int.TryParse(Console.ReadLine(), out userGuessedNumber);
+
 
 while (userGuessedNumber != hiddenNumber)
 {
+    numberOfGuesses++;
+    int.TryParse(Console.ReadLine(), out userGuessedNumber);
+
     if (userGuessedNumber > hiddenNumber)
     {
         Console.WriteLine("The number you guessed was higher than the hidden number. Guess again.");
-        numberOfGuesses++;
-        int.TryParse(Console.ReadLine(), out userGuessedNumber);
     }
-    else
+    else if( userGuessedNumber < hiddenNumber)
     {
         Console.WriteLine("The number you guessed was lower than the hidden number. Guess again.");
-        numberOfGuesses++;
-        int.TryParse(Console.ReadLine(), out userGuessedNumber);
     }
 }
 

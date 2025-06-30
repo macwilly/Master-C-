@@ -1,4 +1,4 @@
-int numberOfSubmittedScores = 0;
+﻿int numberOfSubmittedScores = 0;
 int sumOfSubmittedScores = 0;
 bool finishedEnteringScores = false;
 bool end = false;
@@ -8,6 +8,7 @@ do
 {
     Console.WriteLine("Welcome to the average calculator. Please enter your scores one at a time.\n " +
         "When you are finished type finished and we will return your average.");
+
     do
     {
         int enteredScore = 0;
@@ -20,6 +21,10 @@ do
                 average = sumOfSubmittedScores / numberOfSubmittedScores;
                 Console.WriteLine($"With {numberOfSubmittedScores} submitted at a total of {sumOfSubmittedScores} you average is {average}");
                 Console.WriteLine("\nWould you like to start over? Yes/No");
+                //Resetting all of the data
+                numberOfSubmittedScores = 0;
+                sumOfSubmittedScores = 0;
+                average = 0.0;
             }
             else
             {
@@ -39,3 +44,4 @@ do
     } while (!finishedEnteringScores);
     Console.Clear();
 } while (end);
+Console.ReadKey();

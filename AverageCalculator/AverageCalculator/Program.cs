@@ -17,7 +17,9 @@ do
         {
             if (numberOfSubmittedScores > 0)
             {
-
+                average = sumOfSubmittedScores / numberOfSubmittedScores;
+                Console.WriteLine($"With {numberOfSubmittedScores} submitted at a total of {sumOfSubmittedScores} you average is {average}");
+                Console.WriteLine("\nWould you like to start over? Yes/No");
             }
             else
             {

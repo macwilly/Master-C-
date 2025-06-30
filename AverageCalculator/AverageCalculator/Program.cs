@@ -1,4 +1,4 @@
-﻿int numberOfSubmittedScores = 0;
+int numberOfSubmittedScores = 0;
 int sumOfSubmittedScores = 0;
 bool finishedEnteringScores = false;
 bool end = false;
@@ -34,6 +34,6 @@ do
         }
 
 
-    } while (finishedEnteringScores);
+    } while (!finishedEnteringScores);
     Console.Clear();
 } while (end);

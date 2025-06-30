@@ -18,5 +18,19 @@ Console.WriteLine(myFriendsName);
 
 Console.WriteLine(myOtherFriend);
 
+
+
+string[] daysOfTheWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+foreach (string day in daysOfTheWeek)
+{
+    Console.WriteLine(day);
+}
+
+for (int i = 0; i < daysOfTheWeek.Length; i++)
+{
+    Console.WriteLine(daysOfTheWeek[i]);
+}
+
 // This will keep Console open
 Console.ReadKey();

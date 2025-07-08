@@ -1,4 +1,4 @@
-namespace WeatherStationSimulation
+﻿namespace WeatherStationSimulation
 {
     internal class Program
     {
@@ -12,7 +12,7 @@ namespace WeatherStationSimulation
             int days = int.Parse(Console.ReadLine());
 
             int[] temperature = new int[days];
-            string[] conditions = { "Sunny", "Rainy", "Cloudy", "Snowy"};
+            string[] conditions = { "Sunny", "Rainy", "Cloudy", "Snowy" };
             string[] weatherConditions = new string[days];
             double averageTemperature;
 

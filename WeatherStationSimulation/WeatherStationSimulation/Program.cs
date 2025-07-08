@@ -23,19 +23,20 @@
                 temperature[i] = random.Next(0, 101);
                 weatherConditions[i] = conditions[random.Next(conditions.Length)];
             }
-
+            string temps = string.Join(",", temperature);
             averageTemperature = CalculateAverageTempature(temperature);
             int maxTemperature = temperature.Max();
             int minTemperature = temperature.Min();
-            foreach (int temp in temperature)
-            {
-                Console.WriteLine(temp);
-            }
+            string mostCommonCondition = MostCommonWeather(weatherConditions);
+
+            Console.WriteLine($"The list of temps is {temps}");
+            Console.WriteLine($"All of the conditions were {string.Join(",", weatherConditions)}");
             Console.WriteLine($"The average temperature is {averageTemperature}");
             Console.WriteLine($"The max temperature is {maxTemperature}");
             Console.WriteLine($"My calculated max is {MaxTemp(temperature)}");
             Console.WriteLine($"The min temperature is {minTemperature}");
             Console.WriteLine($"My calculated min is {MinTemp(temperature)}");
+            Console.WriteLine($"Most common weather condion is {mostCommonCondition}");
             Console.ReadKey();
 
         }
@@ -51,6 +52,31 @@
             average = sum / temp.Length;
             return average;
 
+        }
+
+        static string MostCommonWeather(string[] weather)
+        {
+            int count = 0;
+            string mostCommon = weather[0];
+
+            for (int i = 0; i < weather.Length; i++)
+            { 
+                int tempCount = 0;
+                for (int j = 0; j < weather.Length; j++)
+                {
+                    if (weather[j] == weather[i])
+                    {
+                        tempCount++;
+                    }
+                }
+                if (tempCount > count)
+                { 
+                    count = tempCount;
+                    mostCommon = weather[i];
+                }
+            }
+
+            return mostCommon;
         }
 
         static int MaxTemp(int[] temp)

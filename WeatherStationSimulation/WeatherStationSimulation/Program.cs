@@ -14,7 +14,7 @@
             int[] temperature = new int[days];
             string[] conditions = { "Sunny", "Rainy", "Cloudy", "Snowy"};
             string[] weatherConditions = new string[days];
-            double averageTempature;
+            double averageTemperature;
 
             Random random = new Random();
 
@@ -24,18 +24,21 @@
                 weatherConditions[i] = conditions[random.Next(conditions.Length)];
             }
 
-            averageTempature = AverageTempature(temperature);
-
+            averageTemperature = CalculateAverageTempature(temperature);
+            int maxTemperature = temperature.Max();
+            int minTemperature = temperature.Min();
             foreach (int temp in temperature)
             {
                 Console.WriteLine(temp);
             }
-            Console.WriteLine($"The average temperature is {averageTempature}");
+            Console.WriteLine($"The average temperature is {averageTemperature}");
+            Console.WriteLine($"The max temperature is {maxTemperature}");
+            Console.WriteLine($"The min temperature is {minTemperature}");
             Console.ReadKey();
 
         }
 
-        static double AverageTempature(int[] temp)
+        static double CalculateAverageTempature(int[] temp)
         { 
             double sum = 0;
             double average = 0;

@@ -1,4 +1,4 @@
-﻿namespace WeatherStationSimulation
+namespace WeatherStationSimulation
 {
     internal class Program
     {
@@ -33,13 +33,15 @@
             }
             Console.WriteLine($"The average temperature is {averageTemperature}");
             Console.WriteLine($"The max temperature is {maxTemperature}");
+            Console.WriteLine($"My calculated max is {MaxTemp(temperature)}");
             Console.WriteLine($"The min temperature is {minTemperature}");
+            Console.WriteLine($"My calculated min is {MinTemp(temperature)}");
             Console.ReadKey();
 
         }
 
         static double CalculateAverageTempature(int[] temp)
-        { 
+        {
             double sum = 0;
             double average = 0;
             foreach (int i in temp)
@@ -49,6 +51,32 @@
             average = sum / temp.Length;
             return average;
 
+        }
+
+        static int MaxTemp(int[] temp)
+        {
+            int max = temp[0];
+            foreach (int i in temp)
+            {
+                if (i > max)
+                {
+                    max = i;
+                }
+            }
+            return max;
+        }
+
+        static int MinTemp(int[] temp)
+        {
+            int min = temp[0];
+            foreach (int i in temp)
+            {
+                if (i < min)
+                { 
+                    min = i;
+                }
+            }
+            return min;
         }
     }
 }

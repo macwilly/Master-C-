@@ -8,5 +8,9 @@ namespace ClassesApp
 {
     internal class Car
     {
+        //Constructor
+        public Car() {
+            Console.WriteLine("An Object of Car has been created.");
+        }
     }
 }

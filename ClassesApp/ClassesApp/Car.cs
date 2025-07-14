@@ -11,7 +11,7 @@ namespace ClassesApp
         // member variable
         private string _model = "";
         private string _brand = "";
-        private bool _isLuxury = false;
+        //private bool _isLuxury = false;
 
         //Properties
         public string Model { get; set; }
@@ -41,7 +41,8 @@ namespace ClassesApp
             }
         }
 
-        public bool IsLuxury { get => _isLuxury; set => _isLuxury = value; }
+        //public bool IsLuxury { get => _isLuxury; set => _isLuxury = value; }
+        public bool IsLuxury { get; set; }
 
         //Constructor
         public Car(string model, string brand, bool isLuxury)

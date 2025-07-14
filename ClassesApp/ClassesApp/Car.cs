@@ -10,14 +10,39 @@ namespace ClassesApp
     {
         // member variable
         private string _model = "";
-        private string _brand;
-        //Constructor
-        public Car(String model, string brand)
+        private string _brand = "";
+
+        //Properties
+        public string Model { get; set; }
+        public string Brand
         {
-            _model = model;
-            _brand = brand;
-            Console.WriteLine($"A {_brand} {_model} has been created.");
-            _brand = brand;
+            get => _brand;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    Console.WriteLine("You entered nothing!");
+                    _brand = "DEFAULT";
+                }
+                else
+                {
+                    _brand = value;
+                }
+            }
+        }
+
+        //Constructor
+        public Car(string model, string brand)
+        {
+            Model = model;
+            Brand = brand;
+            Console.WriteLine($"A {Brand} {Model} has been created.");
+            Brand = brand;
+        }
+
+        public string AboutCar()
+        {
+            return $"Your Car is now a {Brand} {Model}";
         }
     }
 }

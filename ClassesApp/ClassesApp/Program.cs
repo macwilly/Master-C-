@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Car audi = new Car("A3", "BMW");
-            Car bmw = new Car("i7", "Audi");
+            Car audi = new Car("A3", "BMW", false);
+            Car bmw = new Car("i7", "Audi", true);
 
             audi.Brand = Console.ReadLine();
 

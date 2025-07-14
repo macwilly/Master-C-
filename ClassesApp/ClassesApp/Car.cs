@@ -11,12 +11,22 @@ namespace ClassesApp
         // member variable
         private string _model = "";
         private string _brand = "";
+        private bool _isLuxury = false;
 
         //Properties
         public string Model { get; set; }
         public string Brand
         {
-            get => _brand;
+            get {
+                if (IsLuxury)
+                {
+                    return _brand + " - Luxury Edition";
+                }
+                else
+                {
+                    return _brand;
+                }
+            }
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -31,13 +41,16 @@ namespace ClassesApp
             }
         }
 
+        public bool IsLuxury { get => _isLuxury; set => _isLuxury = value; }
+
         //Constructor
-        public Car(string model, string brand)
+        public Car(string model, string brand, bool isLuxury)
         {
             Model = model;
             Brand = brand;
+            IsLuxury = isLuxury;
             Console.WriteLine($"A {Brand} {Model} has been created.");
-            Brand = brand;
+            
         }
 
         public string AboutCar()

@@ -4,13 +4,15 @@
     {
         static void Main(string[] args)
         {
-
+            
             Car audi = new Car("Audi", "i7", false);
+            /*
             Car bmw = new Car("BMW", "A3", true);
 
             
             audi.Drive();
             bmw.Drive();
+            */
 
             //Car audi = new Car("A3", "BMW", false);
             //Car bmw = new Car("i7", "Audi", true);
@@ -31,7 +33,11 @@
 
             //customer3.Name = Console.ReadLine();
             //Console.WriteLine("Name of Customer " + customer3.Name);
+            Customer myCustomer = new Customer();
+            myCustomer.SetContactDetails("Frank", "123 Main", "555-555-5555");
 
+            audi.SetDriver(myCustomer);
+            audi.Drive();
 
             Console.ReadKey();
         }

@@ -34,5 +34,12 @@ namespace ClassesApp
             Address = "No Address";
             ContactNumber = "No Number";
         }
+
+        public void SetContactDetails(string name, string address, string contactNumber)
+        {
+            Name = name;
+            Address = address;
+            ContactNumber = contactNumber;
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace ClassesApp
         // member variable
         private string _model = "";
         private string _brand = "";
+        private Customer _driver;
         //private bool _isLuxury = false;
 
         //Properties
@@ -41,6 +42,8 @@ namespace ClassesApp
             }
         }
 
+        public Customer Driver { get; set; }
+
         //public bool IsLuxury { get => _isLuxury; set => _isLuxury = value; }
         public bool IsLuxury { get; set; }
 
@@ -61,7 +64,12 @@ namespace ClassesApp
         public void Drive()
         {
 
-            Console.WriteLine(this.AboutCar() +  " is now driving");
+            Console.WriteLine(this.AboutCar() +  " is now driving with " + Driver.Name);
+        }
+
+        public void SetDriver(Customer driver)
+        { 
+            Driver = driver;
         }
     }
 }

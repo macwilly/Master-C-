@@ -58,5 +58,10 @@ namespace ClassesApp
         {
             return $"Your Car is now a {Brand} {Model}";
         }
+        public void Drive()
+        {
+
+            Console.WriteLine(this.AboutCar() +  " is now driving");
+        }
     }
 }

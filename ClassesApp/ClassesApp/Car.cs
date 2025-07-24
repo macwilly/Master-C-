@@ -8,6 +8,8 @@ namespace ClassesApp
 {
     internal class Car
     {
+
+        public static int NumberOfCars = 0;
         // member variable
         private string _model = "";
         private string _brand = "";
@@ -50,11 +52,18 @@ namespace ClassesApp
         //Constructor
         public Car(string model, string brand, bool isLuxury)
         {
+            NumberOfCars++;
+
             Model = model;
             Brand = brand;
             IsLuxury = isLuxury;
             Console.WriteLine($"A {Brand} {Model} has been created.");
             
+        }
+
+        public Car()
+        {
+            NumberOfCars++;
         }
 
         public string AboutCar()

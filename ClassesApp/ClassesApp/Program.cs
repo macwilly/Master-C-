@@ -39,6 +39,11 @@
             audi.SetDriver(myCustomer);
             audi.Drive();
 
+            Car car = new Car();
+            Car car2 = new Car();
+
+            Console.WriteLine(Car.NumberOfCars);
+
             Console.ReadKey();
         }
     }
